@@ -4,101 +4,54 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    # git+ssh://git@git.example.com/User/repo.git if you're using private repos
-    BerkeleyMono = {
-      url = "git+ssh://git@github.com/redyf/BerkeleyMono.git";
-      flake = false;
-    };
-    monolisa = {
-      url = "git+ssh://git@github.com/redyf/monolisa.git";
-      flake = false;
-    };
-    cartograph = {
-      url = "git+ssh://git@github.com/redyf/cartograph.git";
+    nonfree-fonts = {
+      url = "git+ssh://git@github.com/samemrecebi/fonts.git";
       flake = false;
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
-      BerkeleyMono,
-      monolisa,
-      cartograph,
-    }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    nonfree-fonts,
+  }:
     flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
+      system: let
+        pkgs = import nixpkgs {inherit system;};
+      in {
         packages = {
-          lilex = pkgs.stdenv.mkDerivation {
-            pname = "lilex";
-            version = "2.530";
-            src = pkgs.fetchurl {
-              url = "https://github.com/mishamyrt/Lilex/releases/download/2.530/Lilex.zip";
-              sha256 = "sha256-sBn8DaXj7OXHNaoEAhjTuMmUVUbS0zNZi1h7EjembEo=";
-            };
-            buildInputs = [ pkgs.unzip ];
-            unpackPhase = ''
-              unzip -j $src
-            '';
-            installPhase = ''
-              mkdir -p $out/share/fonts/truetype
-              mv *.ttf $out/share/fonts/truetype/
-            '';
-          };
-
-          sf-mono = pkgs.stdenv.mkDerivation {
-            pname = "SFMono-Nerd-Font-Ligaturized";
-            version = "1.0";
-            src = pkgs.fetchFromGitHub {
-              owner = "shaunsingh";
-              repo = "SFMono-Nerd-Font-Ligaturized";
-              rev = "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea";
-              hash = "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=";
-            };
-            installPhase = ''
-              mkdir -p $out/share/fonts/opentype
-              find $src -type f -name '*.otf' -exec cp {} $out/share/fonts/opentype/ \;
-            '';
-          };
-
-          monolisa = pkgs.stdenv.mkDerivation {
-            pname = "Monolisa";
-            version = "2.012";
-            src = monolisa;
-            installPhase = ''
-              mkdir -p $out/share/fonts/truetype
-              mv *.ttf $out/share/fonts/truetype/
-            '';
-          };
-
-          cartograph = pkgs.stdenv.mkDerivation {
-            pname = "CartographCF";
-            version = "1.0";
-            src = cartograph;
-            installPhase = ''
-              mkdir -p $out/share/fonts/opentype
-              find $src -type f -name '*.otf' -exec cp {} $out/share/fonts/opentype/ \;
-            '';
-          };
-
           berkeley = pkgs.stdenv.mkDerivation rec {
             pname = "BerkeleyMono";
-            version = "1.001";
-            src = BerkeleyMono;
+            version = "1.009";
+            src = nonfree-fonts;
             installPhase = ''
-              mkdir -p $out/share/fonts/truetype
-              mv *.ttf $out/share/fonts/truetype/
+              mkdir -p $out/share/fonts/truetype/
+              cp -r $src/Berkeley\ Mono/berkeley-mono/TTF/*.{ttf,otf} $out/share/fonts/truetype/
+              cp -r $src/Berkeley\ Mono/berkeley-mono-variable/TTF/*.{ttf,otf} $out/share/fonts/truetype/
+            '';
+          };
+          berkeley-nf = pkgs.stdenv.mkDerivation rec {
+            pname = "BerkeleyMonoNF";
+            version = "1.009";
+            src = nonfree-fonts;
+            installPhase = ''
+              mkdir -p $out/share/fonts/truetype/
+              cp -r $src/Berkeley\ Mono\ Nerd\ Fonts/*.{ttf,otf} $out/share/fonts/truetype/
+            '';
+          };
+          comiccode = pkgs.stdenv.mkDerivation rec {
+            pname = "ComicCode";
+            version = "1.009";
+            src = nonfree-fonts;
+            installPhase = ''
+              mkdir -p $out/share/fonts/truetype/
+              cp -r $src/Comic\ Code/TTF/*.{ttf,otf} $out/share/fonts/truetype/
             '';
           };
         };
 
-        defaultPackage = self.packages.${system}.sf-mono;
+        defaultPackage = self.packages.${system}.berkeley;
       }
     );
 }

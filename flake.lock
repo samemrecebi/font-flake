@@ -1,94 +1,30 @@
 {
   "nodes": {
-    "BerkeleyMono": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1730071755,
-        "narHash": "sha256-+ktwTMcFobrWezeAW9ix6OL1jQc4bzib9elAubqWJg8=",
-        "ref": "refs/heads/main",
-        "rev": "c91f0f30710b63e7ebb1bdbec881775aaf1b1e62",
-        "revCount": 1,
-        "type": "git",
-        "url": "ssh://git@github.com/redyf/BerkeleyMono.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/redyf/BerkeleyMono.git"
-      }
-    },
-    "berkeley": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1721576325,
-        "narHash": "sha256-MSWJ/FtbxvNp9bwfyuoL6uaOnfXeEvvZ0Ske4iOYPHQ=",
-        "ref": "refs/heads/main",
-        "rev": "5afe9e49aae3d9cd01d3c6641a8490fe54fed309",
-        "revCount": 17,
-        "type": "git",
-        "url": "ssh://git@github.com/redyf/berkeley.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/redyf/berkeley.git"
-      }
-    },
-    "cartograph": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1723304402,
-        "narHash": "sha256-/JvDN8l4wqUV1yk1CACDq8sZ96H9QfIlfeLI2lfyQMU=",
-        "ref": "refs/heads/main",
-        "rev": "86899aa09dcf18ff984aa8ff6d5cb5c35cc5dbb0",
-        "revCount": 1,
-        "type": "git",
-        "url": "ssh://git@github.com/redyf/cartograph.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/redyf/cartograph.git"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1710146030,
-        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
         "type": "github"
-      }
-    },
-    "monolisa": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1709742524,
-        "narHash": "sha256-mkw+WhtLw7498iNI4jTdeTq2eteJsfgxN0o8hs0q2l8=",
-        "ref": "refs/heads/main",
-        "rev": "c234fad704153e0244f160e1e293f35c4b2ff26e",
-        "revCount": 3,
-        "type": "git",
-        "url": "ssh://git@github.com/redyf/monolisa.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/redyf/monolisa.git"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1721577431,
-        "narHash": "sha256-9+jTq9fL7d0v37NoTko8sI61NgQ6GC8LYEloEuoNBBw=",
+        "lastModified": 1733937802,
+        "narHash": "sha256-PcpEGTd32BidnPq4d9PWTqFBhwVquipm0b7jjAw/M/s=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "00233f1da20cc10683f778890b9b20229eed37f0",
+        "rev": "7ea7a19b2d52f2cbbf066d397c434f5478512352",
         "type": "github"
       },
       "original": {
@@ -97,14 +33,27 @@
         "type": "github"
       }
     },
+    "nonfree-fonts": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733928065,
+        "narHash": "sha256-Imu7muANeCgAtBHkpRNLUdElGxn/QALQFB4v5QfQXyU=",
+        "ref": "refs/heads/main",
+        "rev": "9a67397e4c8913d6679a1b23b7c21fc7770f2bf2",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/samemrecebi/fonts.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/samemrecebi/fonts.git"
+      }
+    },
     "root": {
       "inputs": {
-        "BerkeleyMono": "BerkeleyMono",
-        "berkeley": "berkeley",
-        "cartograph": "cartograph",
         "flake-utils": "flake-utils",
-        "monolisa": "monolisa",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nonfree-fonts": "nonfree-fonts"
       }
     },
     "systems": {
