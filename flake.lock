@@ -36,11 +36,11 @@
     "nonfree-fonts": {
       "flake": false,
       "locked": {
-        "lastModified": 1744992679,
-        "narHash": "sha256-AzjfajUoDY8YPTrZ1n3XUhppUo3lNwzpMQRrzbIcJKA=",
+        "lastModified": 1744993443,
+        "narHash": "sha256-GU5mM/U/etH5N+aoReY6GTFoGcAiq9O9i+fI0Ycrvcc=",
         "ref": "refs/heads/main",
-        "rev": "a384fe4feccb682cc9aebc757a24792b21c4ef3a",
-        "revCount": 2,
+        "rev": "941e84f46fbf0e1436585038b044506b7f8fc8b1",
+        "revCount": 3,
         "type": "git",
         "url": "ssh://git@github.com/samemrecebi/fonts.git"
       },
