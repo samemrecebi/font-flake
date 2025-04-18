@@ -20,11 +20,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1734303123,
-        "narHash": "sha256-R6KtZLZnep6k3d7yJg42DkVbXySEFLGDrhmu/B364t8=",
+        "lastModified": 1744990050,
+        "narHash": "sha256-hLAwXbm6XJITkelphtUk5lbxiHvIa4OSEw6i52yKqMk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "639295b1f6dc159631e7dec5a0b926ec2a2fdf9c",
+        "rev": "b4b9c47c101749edc19efa95f28276f2fecd2bda",
         "type": "github"
       },
       "original": {
@@ -36,11 +36,11 @@
     "nonfree-fonts": {
       "flake": false,
       "locked": {
-        "lastModified": 1733928065,
-        "narHash": "sha256-Imu7muANeCgAtBHkpRNLUdElGxn/QALQFB4v5QfQXyU=",
+        "lastModified": 1744992679,
+        "narHash": "sha256-AzjfajUoDY8YPTrZ1n3XUhppUo3lNwzpMQRrzbIcJKA=",
         "ref": "refs/heads/main",
-        "rev": "9a67397e4c8913d6679a1b23b7c21fc7770f2bf2",
-        "revCount": 1,
+        "rev": "a384fe4feccb682cc9aebc757a24792b21c4ef3a",
+        "revCount": 2,
         "type": "git",
         "url": "ssh://git@github.com/samemrecebi/fonts.git"
       },

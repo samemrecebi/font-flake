@@ -28,7 +28,7 @@
             installPhase = ''
               mkdir -p $out/share/fonts/truetype/
               cp -r $src/Berkeley\ Mono/berkeley-mono/TTF/*.{ttf,otf} $out/share/fonts/truetype/
-              cp -r $src/Berkeley\ Mono/berkeley-mono-variable/TTF/*.{ttf,otf} $out/share/fonts/truetype/
+              cp -r $src/Berkeley\ Mono/berkeley-mono-oblique/TTF/*.{ttf,otf} $out/share/fonts/truetype/
             '';
           };
           berkeley-nf = pkgs.stdenv.mkDerivation rec {
@@ -48,6 +48,15 @@
               mkdir -p $out/share/fonts/truetype/
               cp -r $src/Comic\ Code/TTF/*.{ttf,otf} $out/share/fonts/truetype/
             '';
+          };
+            comiccode-nf = pkgs.stdenv.mkDerivation rec {
+            pname = "ComicCodeNF";
+            version = "1.009";
+            src = nonfree-fonts;
+            installPhase = ''
+              mkdir -p $out/share/fonts/truetype/
+              cp -r $src/Comic\ Code\ Nerd\ Fonts/TTF/*.{ttf,otf} $out/share/fonts/truetype/
+            '';  
           };
         };
 
