@@ -23,17 +23,17 @@
         packages = {
           berkeley = pkgs.stdenv.mkDerivation rec {
             pname = "BerkeleyMono";
-            version = "1.009";
+            version = "2.001";
             src = nonfree-fonts;
             installPhase = ''
               mkdir -p $out/share/fonts/truetype/
-              cp -r $src/Berkeley\ Mono/berkeley-mono/TTF/*.{ttf,otf} $out/share/fonts/truetype/
-              cp -r $src/Berkeley\ Mono/berkeley-mono-oblique/TTF/*.{ttf,otf} $out/share/fonts/truetype/
+              cp -r $src/Berkeley\ Mono/berkeley-mono/*.ttf $out/share/fonts/truetype/
+              cp -r $src/Berkeley\ Mono/berkeley-mono-oblique/*.ttf $out/share/fonts/truetype/
             '';
           };
           berkeley-nf = pkgs.stdenv.mkDerivation rec {
             pname = "BerkeleyMonoNF";
-            version = "1.009";
+            version = "2.001";
             src = nonfree-fonts;
             installPhase = ''
               mkdir -p $out/share/fonts/truetype/
